@@ -31,3 +31,7 @@ Additional machine-learning-integrated data assimilation methods will be added t
 ## License
 
 Please refer to the license information provided with each method.
+
+## Contact
+
+- xuz067@ucsd.edu or xzhou517@caltech.edu
