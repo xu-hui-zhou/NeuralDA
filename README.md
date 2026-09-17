@@ -10,7 +10,7 @@ Code, numerical examples, and documentation are available in [`NeuralEnKF/`](./N
 
 ## Ensemble Generative Filter (EnGF)
 
-The **EnGF** is a non-Gaussian filtering framework that fits a lightweight generative model to the forecast ensemble at each data assimilation cycle. The learned distribution enables inexpensive generation of a much larger particle population for Bayesian analysis without requiring additional model forecasts.
+The **EnGF** is a non-Gaussian filtering framework that fits a generative model to the forecast ensemble at each data assimilation cycle. The learned distribution enables inexpensive generation of a much larger particle population for Bayesian analysis without requiring additional model forecasts.
 
 Code, numerical examples, and documentation will be available in [`EnGF/`](./EnGF).
 
