@@ -17,7 +17,7 @@ NeuralEnKF/
 - **`core/`**  
   Core implementation of the Neural EnKF, including neural state representations, ensemble Kalman analysis, chain-based training, and simulation utilities.
 
-- **`examples_NeuralEnKF/`**  
+- **`examples/`**  
   Data-assimilation examples demonstrating the application of the Neural EnKF to benchmark problems. Each example includes its configuration, simulation setup, data-assimilation workflow, postprocessing scripts, and reference results.
 
 See the README in each directory for additional details.
