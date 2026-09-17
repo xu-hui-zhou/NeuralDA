@@ -8,7 +8,7 @@ This repository provides the implementation of the Neural Ensemble Kalman Filter
 NeuralEnKF/
 ├── benchmarks/
 ├── core/
-└── examples_NeuralEnKF/
+└── examples/
 ~~~
 
 - **`benchmarks/`**  
