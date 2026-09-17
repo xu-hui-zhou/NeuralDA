@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# Clean generated files and directories for the 2D blast-wave case.
+
+set -e
+
+echo "Cleaning 2D blast-wave case..."
+
+# ------------------------------------------------------------
+# Ensemble sample log
+# ------------------------------------------------------------
+
+if [ -f ensemble_samples.csv ]; then
+    rm ensemble_samples.csv
+    echo "Removed ensemble_samples.csv"
+fi
+
+# ------------------------------------------------------------
+# Ensemble-member directories
+# ------------------------------------------------------------
+
+for d in bw_*; do
+
+    if [ -d "$d" ]; then
+        rm -rf "$d"
+        echo "Removed $d"
+    fi
+
+done
+
+# ------------------------------------------------------------
+# Ensemble-mean results
+# ------------------------------------------------------------
+
+if [ -d bw.mean ]; then
+    rm -rf bw.mean
+    echo "Removed bw.mean"
+fi
+
+# ------------------------------------------------------------
+# Data-assimilation results
+# ------------------------------------------------------------
+
+if [ -d da_results ]; then
+    rm -rf da_results
+    echo "Removed da_results"
+fi
+
+echo "Done."

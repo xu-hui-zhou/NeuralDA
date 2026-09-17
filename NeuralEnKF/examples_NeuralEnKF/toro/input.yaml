@@ -1,0 +1,47 @@
+# Toro Neural EnKF configuration
+
+case:
+  name: toro
+
+initial_ensemble:
+  size: 30
+  seed: 0
+  mean:
+    x_diaphragm: 0.45
+    rho_left: 5.99924
+    p_left: 460.894
+    rho_right: 5.99242
+    p_right: 46.0950
+  std:
+    x_diaphragm: 0.10
+    rho_left: 0.20
+    p_left: 46.0894
+    rho_right: 0.1
+    p_right: 4.6095
+  x_diaphragm_bounds:
+    min: 0.10
+    max: 0.90
+
+assimilation:
+  # Changes to these settings may require corresponding updates
+  # in the template folders.
+  num_cycles: 9
+  interval: 50
+
+observations:
+  x_start: 0.05125
+  x_end: 1.0
+  spacing: 0.1
+  relative_noise: 0.05
+  absolute_noise: 5.0
+
+network:
+  hidden_dim: 64
+  num_layers: 4
+
+training:
+  learning_rate: 1.0e-3
+  first_learning_rate: 5.0e-3
+  max_epochs: 30000
+  print_every: 1000
+  target_loss: 4.0e-6

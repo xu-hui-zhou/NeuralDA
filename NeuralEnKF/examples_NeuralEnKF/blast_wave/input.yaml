@@ -1,0 +1,54 @@
+# 2D Blast-Wave Neural EnKF configuration
+case:
+  name: bw
+
+initial_ensemble:
+  size: 30
+  seed: 42
+  mean:
+    center_x: 0.53
+    center_y: 0.53
+    radius: 0.19
+    density: 1.05
+    pressure: 102.0
+  std:
+    center_x: 0.10
+    center_y: 0.10
+    radius: 0.02
+    density: 0.10
+    pressure: 3.0
+  center_bounds:
+    min: 0.30
+    max: 0.70
+  radius_bounds:
+    min: 0.16
+    max: 0.24
+
+assimilation:
+  # Changes to these settings may require corresponding updates in the template folders.
+  num_cycles: 11
+  interval: 40
+
+observations:
+  # 7x7 observations
+  x_start: 0.05
+  x_end: 1.0
+  y_start: 0.05
+  y_end: 1.0
+  spacing: 0.15
+  relative_noise: 0.03
+  absolute_noise: 0.001
+
+network:
+  hidden_dim: 100
+  num_layers: 6
+
+training:
+  learning_rate: 1.0e-3
+  first_learning_rate: 1.0e-2
+  max_epochs: 100000
+  print_every: 500
+  target_loss: 1.0e-5
+
+physical_constraints:
+  pressure_min: 0.1

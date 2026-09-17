@@ -1,0 +1,46 @@
+# Sod Neural EnKF configuration
+
+case:
+  name: sod
+
+initial_ensemble:
+  size: 40
+  seed: 0
+  mean:
+    x_diaphragm: 0.55
+    rho_left: 0.95
+    p_left: 1.05
+    rho_right: 0.13
+    p_right: 0.09
+  std:
+    x_diaphragm: 0.20
+    rho_left: 0.05
+    p_left: 0.05
+    rho_right: 0.01
+    p_right: 0.01
+  x_diaphragm_bounds:
+    min: 0.10
+    max: 0.90
+
+assimilation:
+  # Changes to these settings may require corresponding updates in the template folders.
+  num_cycles: 9
+  interval: 25
+
+observations:
+  x_start: 0.05125
+  x_end: 1.0
+  spacing: 0.1
+  relative_noise: 0.05
+  absolute_noise: 0.01
+
+network:
+  hidden_dim: 64
+  num_layers: 4
+
+training:
+  learning_rate: 1.0e-3
+  first_learning_rate: 1.0e-2
+  max_epochs: 20000
+  print_every: 1000
+  target_loss: 2.0e-6 # need to be small (< 3.0e-6) to capture the contact surface here

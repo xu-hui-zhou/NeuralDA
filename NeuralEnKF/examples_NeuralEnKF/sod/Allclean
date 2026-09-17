@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Clean generated files and directories for the Sod Neural EnKF example.
+
+set -e
+
+echo "Cleaning Sod Neural EnKF example..."
+
+# Remove generated files
+rm -f ensemble_samples.csv
+rm -f run.log
+
+# Remove ensemble-member directories
+for d in sod_[0-9][0-9][0-9]; do
+    if [ -d "$d" ]; then
+        rm -rf "$d"
+        echo "Removed $d"
+    fi
+done
+
+# Remove generated DA results
+if [ -d da_results ]; then
+    rm -rf da_results
+    echo "Removed da_results"
+fi
+
+echo "Done."

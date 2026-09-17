@@ -1,0 +1,33 @@
+#!/bin/bash
+# Exit immediately if a command exits with a non-zero status
+set -e
+
+# Solver absolute path
+SOLVER="/home/xuhuizhou/m2c-installation/m2c/m2c"
+
+# Input file (from command-line argument)
+INPUT="$1"
+
+# Check if user provided input
+if [ -z "$INPUT" ]; then
+    echo "Usage: $0 <input_file>"
+    exit 1
+fi
+
+# Check if solver exists
+if [ ! -f "$SOLVER" ]; then
+    echo "Error: Solver not found at $SOLVER"
+    exit 1
+fi
+
+# Check if input file exists
+if [ ! -f "$INPUT" ]; then
+    echo "Error: Input file '$INPUT' not found in $(pwd)"
+    exit 1
+fi
+
+# Run the solver
+echo "Running solver..."
+"$SOLVER" "$INPUT"
+
+echo "Run completed successfully."
