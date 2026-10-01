@@ -79,9 +79,3 @@ This is a mixed-license repository:
 M2C itself is an external dependency and is not distributed as part of this repository. Its own license applies when it is obtained or used.
 
 See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for the affected files and attribution details. The MIT License does not apply to, replace, or override the GPLv3 terms for the M2C-derived files.
-
-## Contact
-
-For questions regarding the Neural EnKF code, please contact Xuhui Zhou:
-
-- xuz067@ucsd.edu or xzhou517@caltech.edu
