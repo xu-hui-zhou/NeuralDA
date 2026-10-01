@@ -34,4 +34,6 @@ Please refer to the license information provided with each method.
 
 ## Contact
 
+For questions regarding the Neural EnKF code, please contact Xuhui Zhou:
+
 - xuz067@ucsd.edu or xzhou517@caltech.edu
